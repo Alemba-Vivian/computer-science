@@ -43,4 +43,58 @@ console.log(pow(2,4))  //return 16
 
 //N/B a recursive solution is usually shorter that iterative one
 
+//the maximal number of nested calls(including the first one) is called recursion depth.
+//the maximal recursion depth is limited by javascript engine.
+
+
+
+//Recursive traversals
+//we have a company, the staff structure can be represented as
+
+let company = {
+    sales: [{
+      name: 'John',
+      salary: 1000
+    }, {
+      name: 'Alice',
+      salary: 1600
+    }],
+  
+    development: {
+      sites: [{
+        name: 'Peter',
+        salary: 2000
+      }, {
+        name: 'Alex',
+        salary: 1800
+      }],
+  
+      internals: [{
+        name: 'Jack',
+        salary: 1300
+      }]
+    }
+  };
+
+  //get the total salaries from the staff
+
+  //function to do the job
+  function sumSalaries(department){
+    //case 1
+     if(Array.isArray(department)){
+        return department.reduce((prev, current) => prev + current.salary, 0);
+     }else{  //  case 2
+        let sum =0;
+        for(let subdep of Object.values(department)){
+            sum +=sumSalaries(subdep); // recursively call for subdepartments, sum results. 
+        }
+        return sum;
+
+     }
+    
+  }
+  console.log(sumSalaries(company)); //return 7700;
+  
+  //Recursive structures
+
 
