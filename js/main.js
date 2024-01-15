@@ -94,7 +94,79 @@ let company = {
     
   }
   console.log(sumSalaries(company)); //return 7700;
+
+
   
   //Recursive structures
+  //a recursive data structure is a structure that replicates itself in parts
+
+  //linked list
+  //is recursively defined as an object with value, next
+
+
+
+//   Tasks
+//sum all the numbers till a given one
+// Write a function sumTo(n) that calculates the sum of numbers 1 + 2 + ... + n.
+
+function sumTo(n){
+    //using recursion
+    //case 1
+    // if(n==1){
+    //     return n;
+    // }else //case 2
+    // {
+    //    return n + sumTo(n-1);
+    // }
+
+
+    // using for loop
+    
+    let sum=0;
+    for(let i=1; i<=n; i++){
+        sum +=i;
+    }
+    return sum;
+
+
+}
+
+console.log(sumTo(1) ) //return 1
+console.log(sumTo(2)) //return 3
+console.log(sumTo(3)) //return 6
+console.log(sumTo(4)) //return 10
+console.log(sumTo(100)) //return 5050
+
+//calculate factorial
+//The factorial of a natural number is a number multiplied by "number minus one",
+// then by "number minus two", and so on till 1. The factorial of n is denoted as n!
+
+//The task is to write a function factorial(n) that calculates n! using recursive calls.
+//P.S. Hint: n! can be written as n * (n-1)!
+
+
+function factorial(n){
+    //working with recursion
+    //case 1
+    if(n==1){
+        return n;
+    }else //case 2
+    {
+        return n * factorial(n-1);
+    }
+  
+}
+
+console.log(factorial(1)) //return  1
+console.log(factorial(2)) //return  2
+console.log(factorial(3)) //return  6
+console.log(factorial(4)) //return  24
+console.log(factorial(5)) //return  120
+
+
+
+
+
+
 
 
